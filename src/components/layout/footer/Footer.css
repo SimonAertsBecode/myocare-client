@@ -1,0 +1,27 @@
+.footer {
+  background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+  color: white;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-text {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 1.5rem;
+  }
+}
