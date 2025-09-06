@@ -1,38 +1,35 @@
+import { useLanguage } from "../../i18n/useLanguage";
 import "./Landing.css";
 
 const Landing = () => {
+  const { t } = useLanguage();
   return (
     <main className="landing">
       <section className="hero-section">
         <div className="hero-container">
           <div className="hero-content">
             <div className="hero-badge">
-              <span>🎯 Spécialisé dans les douleurs du dos</span>
+              <span>{t.landing.hero.badge}</span>
             </div>
             <h1 className="hero-title">
-              Soulagez vos douleurs de dos avec{" "}
+              {t.landing.hero.title.split('MyoCare')[0]}
               <span className="brand-name">MyoCare</span>
             </h1>
             <p className="hero-subtitle">
-              Un plan de rééducation complet sur 6 semaines avec 3 fiches PDF
-              progressives pour maximiser vos résultats contre le mal de dos
+              {t.landing.hero.subtitle}
             </p>
             <p className="hero-description">
-              <strong>Notre approche :</strong> Diagnostic du dos en 15 minutes
-              → Analyse par un physiothérapeute expert → Recevez votre plan
-              complet de rééducation avec 3 fiches PDF d'exercices évolutifs sur
-              6 semaines
+              <strong>{t.landing.hero.approachLabel}</strong> {t.landing.hero.description}
             </p>
             <div className="medical-disclaimer">
               <div className="disclaimer-icon">⚕️</div>
               <p>
-                <strong>Important :</strong> MyoCare complète mais ne remplace
-                pas un diagnostic médical traditionnel.
+                {t.landing.hero.medicalDisclaimer}
               </p>
             </div>
             <div className="hero-actions">
               <button className="cta-button primary">
-                <span>Démarrer mon plan de rééducation</span>
+                <span>{t.landing.hero.ctaPrimary}</span>
                 <svg
                   width="20"
                   height="20"
@@ -47,7 +44,7 @@ const Landing = () => {
                 </svg>
               </button>
               <button className="cta-button secondary">
-                <span>En savoir plus</span>
+                <span>{t.landing.hero.ctaSecondary}</span>
               </button>
             </div>
           </div>
@@ -55,22 +52,22 @@ const Landing = () => {
             <div className="floating-card card-1">
               <div className="card-icon">🔍</div>
               <div className="card-content">
-                <h4>Diagnostic dos</h4>
-                <p>Formulaire 15 minutes</p>
+                <h4>{t.landing.hero.cards.diagnostic.title}</h4>
+                <p>{t.landing.hero.cards.diagnostic.description}</p>
               </div>
             </div>
             <div className="floating-card card-2">
               <div className="card-icon">👨‍⚕️</div>
               <div className="card-content">
-                <h4>Analyse expert</h4>
-                <p>Sous 24 heures</p>
+                <h4>{t.landing.hero.cards.analysis.title}</h4>
+                <p>{t.landing.hero.cards.analysis.description}</p>
               </div>
             </div>
             <div className="floating-card card-3">
               <div className="card-icon">📚</div>
               <div className="card-content">
-                <h4>Plan 6 semaines</h4>
-                <p>3 fiches PDF évolutives</p>
+                <h4>{t.landing.hero.cards.plan.title}</h4>
+                <p>{t.landing.hero.cards.plan.description}</p>
               </div>
             </div>
           </div>
@@ -80,9 +77,9 @@ const Landing = () => {
       <section className="how-it-works-section">
         <div className="how-it-works-container">
           <div className="section-header">
-            <h2 className="section-title">Comment soulager votre mal de dos</h2>
+            <h2 className="section-title">{t.landing.howItWorks.title}</h2>
             <p className="section-subtitle">
-              3 étapes simples pour obtenir vos exercices personnalisés
+              {t.landing.howItWorks.subtitle}
             </p>
           </div>
 
@@ -90,16 +87,14 @@ const Landing = () => {
             <div className="step-card" data-step="1">
               <div className="step-number">01</div>
               <div className="step-icon">🔍</div>
-              <h3 className="step-title">Diagnostic du dos en ligne</h3>
+              <h3 className="step-title">{t.landing.howItWorks.steps.step1.title}</h3>
               <p className="step-description">
-                Répondez à notre questionnaire spécialisé sur vos douleurs
-                dorsales : localisation, intensité, historique, activités
-                quotidiennes et facteurs déclenchants.
+                {t.landing.howItWorks.steps.step1.description}
               </p>
               <div className="step-features">
-                <span className="feature-tag">Spécialisé dos</span>
-                <span className="feature-tag">15 minutes</span>
-                <span className="feature-tag">Sécurisé</span>
+                {t.landing.howItWorks.steps.step1.tags.map((tag, index) => (
+                  <span key={index} className="feature-tag">{tag}</span>
+                ))}
               </div>
             </div>
 
@@ -118,15 +113,14 @@ const Landing = () => {
             <div className="step-card" data-step="2">
               <div className="step-number">02</div>
               <div className="step-icon">🎯</div>
-              <h3 className="step-title">Analyse physiothérapique</h3>
+              <h3 className="step-title">{t.landing.howItWorks.steps.step2.title}</h3>
               <p className="step-description">
-                Un physiothérapeute expert en troubles dorsaux analyse votre
-                profil et sélectionne les exercices les plus adaptés à votre
-                type de mal de dos.
+                {t.landing.howItWorks.steps.step2.description}
               </p>
               <div className="step-features">
-                <span className="feature-tag">Expert dos</span>
-                <span className="feature-tag">24h max</span>
+                {t.landing.howItWorks.steps.step2.tags.map((tag, index) => (
+                  <span key={index} className="feature-tag">{tag}</span>
+                ))}
               </div>
             </div>
 
@@ -145,15 +139,14 @@ const Landing = () => {
             <div className="step-card" data-step="3">
               <div className="step-number">03</div>
               <div className="step-icon">💪</div>
-              <h3 className="step-title">Vos exercices anti-mal de dos</h3>
+              <h3 className="step-title">{t.landing.howItWorks.steps.step3.title}</h3>
               <p className="step-description">
-                Recevez vos fiches PDF d'exercices fonctionnels évolutives
-                spécialement conçus pour soulager et prévenir vos douleurs
-                dorsales. Accessible via votre tableau de bord.
+                {t.landing.howItWorks.steps.step3.description}
               </p>
               <div className="step-features">
-                <span className="feature-tag">Exercices ciblés</span>
-                <span className="feature-tag">PDF téléchargeable</span>
+                {t.landing.howItWorks.steps.step3.tags.map((tag, index) => (
+                  <span key={index} className="feature-tag">{tag}</span>
+                ))}
               </div>
             </div>
           </div>
@@ -165,26 +158,19 @@ const Landing = () => {
           <div className="education-content">
             <div className="education-text">
               <h2 className="section-title">
-                Pourquoi les exercices fonctionnels soulagent le mal de dos ?
+                {t.landing.education.title}
               </h2>
               <p className="education-description">
-                <strong>90% des douleurs dorsales (HAS)</strong> peuvent être
-                soulagées grâce à des exercices adaptés et fonctionnels.
-                Contrairement aux médicaments qui masquent temporairement la
-                douleur, les exercices ciblés s'attaquent aux causes profondes :
-                faiblesse musculaire, déséquilibres posturaux et rigidité
-                articulaire.
+                {t.landing.education.description}
               </p>
 
               <div className="education-benefits">
                 <div className="benefit-item">
                   <div className="benefit-icon">🎯</div>
                   <div className="benefit-content">
-                    <h4>Renforcement ciblé</h4>
+                    <h4>{t.landing.education.benefits.targetedStrengthening.title}</h4>
                     <p>
-                      Renforcez les muscles du dos, de la ceinture abdominale et
-                      du bassin pour un soutien optimal de votre colonne
-                      vertébrale.
+                      {t.landing.education.benefits.targetedStrengthening.description}
                     </p>
                   </div>
                 </div>
@@ -192,11 +178,9 @@ const Landing = () => {
                 <div className="benefit-item">
                   <div className="benefit-icon">⚖️</div>
                   <div className="benefit-content">
-                    <h4>Correction posturale</h4>
+                    <h4>{t.landing.education.benefits.posturalCorrection.title}</h4>
                     <p>
-                      Prenez conscience et corrigez les déséquilibres
-                      musculaires ayant un impact dans vos douleurs
-                      quotidiennes.
+                      {t.landing.education.benefits.posturalCorrection.description}
                     </p>
                   </div>
                 </div>
@@ -204,10 +188,9 @@ const Landing = () => {
                 <div className="benefit-item">
                   <div className="benefit-icon">🔄</div>
                   <div className="benefit-content">
-                    <h4>Amélioration de la mobilité</h4>
+                    <h4>{t.landing.education.benefits.mobilityImprovement.title}</h4>
                     <p>
-                      Retrouvez votre amplitude de mouvement et réduisez les
-                      raideurs grâce à des étirements spécifiques.
+                      {t.landing.education.benefits.mobilityImprovement.description}
                     </p>
                   </div>
                 </div>
@@ -215,10 +198,9 @@ const Landing = () => {
                 <div className="benefit-item">
                   <div className="benefit-icon">🛡️</div>
                   <div className="benefit-content">
-                    <h4>Prévention durable</h4>
+                    <h4>{t.landing.education.benefits.durablePrevention.title}</h4>
                     <p>
-                      Prévenez la réapparition des douleurs en développant de
-                      bonnes habitudes.
+                      {t.landing.education.benefits.durablePrevention.description}
                     </p>
                   </div>
                 </div>
@@ -229,13 +211,13 @@ const Landing = () => {
               <div className="stat-card">
                 <div className="stat-number">90%</div>
                 <div className="stat-label">
-                  des maux de dos soulagés par l'exercice
+                  {t.landing.education.stats.backPainRelief}
                 </div>
               </div>
               <div className="stat-card">
                 <div className="stat-number">6 sem.</div>
                 <div className="stat-label">
-                  plan de réhabilitation evolutif sur 6 semaines
+                  {t.landing.education.stats.rehabilitationPlan}
                 </div>
               </div>
             </div>
@@ -247,10 +229,10 @@ const Landing = () => {
         <div className="features-container">
           <div className="section-header">
             <h2 className="section-title">
-              Pourquoi choisir MyoCare pour votre dos
+              {t.landing.features.title}
             </h2>
             <p className="section-subtitle">
-              Une solution spécialisée dans les troubles dorsaux
+              {t.landing.features.subtitle}
             </p>
           </div>
 
@@ -259,16 +241,14 @@ const Landing = () => {
               <div className="feature-icon-wrapper">
                 <div className="feature-icon">🎯</div>
               </div>
-              <h3 className="feature-title">Spécialisation dos</h3>
+              <h3 className="feature-title">{t.landing.features.personalizedCare.title}</h3>
               <p className="feature-description">
-                Nos physiothérapeutes sont spécialisés dans les troubles
-                dorsaux. Chaque exercice est sélectionné selon votre type de mal
-                de dos.
+                {t.landing.features.personalizedCare.description}
               </p>
               <ul className="feature-benefits">
-                <li>Expertise troubles dorsaux</li>
-                <li>Exercices ciblés lombaires</li>
-                <li>Approche posturale</li>
+                {t.landing.features.personalizedCare.benefits.map((benefit, index) => (
+                  <li key={index}>{benefit}</li>
+                ))}
               </ul>
             </div>
 
@@ -276,16 +256,14 @@ const Landing = () => {
               <div className="feature-icon-wrapper">
                 <div className="feature-icon">⚡</div>
               </div>
-              <h3 className="feature-title">Accompagnement structuré</h3>
+              <h3 className="feature-title">{t.landing.features.simplifiedAccess.title}</h3>
               <p className="feature-description">
-                Un plan d'exercices progressif que vous pouvez suivre à votre
-                rythme. Chaque personne évolue différemment selon sa condition
-                et son engagement.
+                {t.landing.features.simplifiedAccess.description}
               </p>
               <ul className="feature-benefits">
-                <li>Exercices à votre rythme</li>
-                <li>Suivi progressif</li>
-                <li>Résultats variables*</li>
+                {t.landing.features.simplifiedAccess.benefits.map((benefit, index) => (
+                  <li key={index}>{benefit}</li>
+                ))}
               </ul>
             </div>
 
@@ -293,15 +271,14 @@ const Landing = () => {
               <div className="feature-icon-wrapper">
                 <div className="feature-icon">👨‍⚕️</div>
               </div>
-              <h3 className="feature-title">Approche complémentaire</h3>
+              <h3 className="feature-title">{t.landing.features.benevolentSupport.title}</h3>
               <p className="feature-description">
-                MyoCare complète votre suivi médical traditionnel sans le
-                remplacer. Une approche intégrée pour votre bien-être.
+                {t.landing.features.benevolentSupport.description}
               </p>
               <ul className="feature-benefits">
-                <li>Complément médical</li>
-                <li>Approche holistique</li>
-                <li>Suivi personnalisé</li>
+                {t.landing.features.benevolentSupport.benefits.map((benefit, index) => (
+                  <li key={index}>{benefit}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -309,10 +286,7 @@ const Landing = () => {
           <div className="medical-note">
             <p>
               <small>
-                * Les résultats peuvent varier d'une personne à l'autre selon la
-                condition physique, l'assiduité dans la pratique et la nature du
-                trouble dorsal. MyoCare ne garantit pas de résultats
-                spécifiques.
+                {t.landing.features.medicalNote}
               </small>
             </p>
           </div>
@@ -323,28 +297,27 @@ const Landing = () => {
         <div className="cta-container">
           <div className="cta-content">
             <h2 className="cta-title">
-              Prêt à démarrer votre plan d'exercices ?
+              {t.landing.cta.title}
             </h2>
             <p className="cta-description">
-              Rejoignez des milliers de personnes qui font confiance à MyoCare
-              pour les accompagner dans leur démarche de mieux-être.
+              {t.landing.cta.description}
             </p>
             <div className="cta-stats">
               <div className="stat">
                 <span className="stat-number">2500+</span>
-                <span className="stat-label">Utilisateurs accompagnés</span>
+                <span className="stat-label">{t.landing.cta.stats.users}</span>
               </div>
               <div className="stat">
                 <span className="stat-number">150+</span>
-                <span className="stat-label">Experts du dos</span>
+                <span className="stat-label">{t.landing.cta.stats.experts}</span>
               </div>
               <div className="stat">
                 <span className="stat-number">95%</span>
-                <span className="stat-label">Taux de satisfaction</span>
+                <span className="stat-label">{t.landing.cta.stats.satisfaction}</span>
               </div>
             </div>
             <button className="cta-button primary large">
-              <span>Commencer mon diagnostic du dos</span>
+              <span>{t.landing.cta.button}</span>
               <svg
                 width="24"
                 height="24"

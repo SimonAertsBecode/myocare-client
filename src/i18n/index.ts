@@ -1,10 +1,12 @@
 import { fr } from './translations/fr';
 import { en } from './translations/en';
+import { nl } from './translations/nl';
 import type { Language, Translations, TranslationKeys } from './types';
 
 export const translations: Translations = {
   fr,
   en,
+  nl,
 };
 
 export const defaultLanguage: Language = 'fr';
@@ -34,3 +36,4 @@ export const getNestedTranslation = (
 export type * from './types';
 export * from './translations/fr';
 export * from './translations/en';
+export * from './translations/nl';
