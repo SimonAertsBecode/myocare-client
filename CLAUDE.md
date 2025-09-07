@@ -23,7 +23,7 @@ MyoCare is a React + TypeScript + Vite healthcare platform application. It's bui
 ### Internationalization (i18n)
 The application uses a custom TypeScript-based i18n system:
 - **Structure**: `src/i18n/` contains types, translations, and utilities
-- **Languages**: French (default), English (ready for expansion)
+- **Languages**: French (default), English, Dutch (ready for expansion)
 - **Type Safety**: Full TypeScript support for translation keys
 - **Usage**: Import from `src/i18n/index.ts` for translations and utilities
 
@@ -42,9 +42,9 @@ The application uses a custom TypeScript-based i18n system:
 ## Technology Stack
 
 - **Frontend Framework**: React 19.1.1 with React Router DOM 7.8.2
-- **Language**: TypeScript 5.8.3 with strict configuration
-- **Build Tool**: Vite 7.1.4
-- **Linting**: ESLint 9.33.0 with TypeScript and React plugins
+- **Language**: TypeScript ~5.8.3 with strict configuration
+- **Build Tool**: Vite ^7.1.2
+- **Linting**: ESLint ^9.33.0 with TypeScript and React plugins
 - **Package Manager**: pnpm (uses pnpm-lock.yaml)
 
 ## TypeScript Configuration

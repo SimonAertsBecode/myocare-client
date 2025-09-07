@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../i18n/useLanguage";
 import "./Landing.css";
 
 const Landing = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
+
+  const handleStartDiagnostic = () => {
+    navigate('/diagnostic');
+  };
+
   return (
     <main className="landing">
       <section className="hero-section">
@@ -28,7 +35,7 @@ const Landing = () => {
               </p>
             </div>
             <div className="hero-actions">
-              <button className="cta-button primary">
+              <button className="cta-button primary" onClick={handleStartDiagnostic}>
                 <span>{t.landing.hero.ctaPrimary}</span>
                 <svg
                   width="20"
@@ -316,7 +323,7 @@ const Landing = () => {
                 <span className="stat-label">{t.landing.cta.stats.satisfaction}</span>
               </div>
             </div>
-            <button className="cta-button primary large">
+            <button className="cta-button primary large" onClick={handleStartDiagnostic}>
               <span>{t.landing.cta.button}</span>
               <svg
                 width="24"

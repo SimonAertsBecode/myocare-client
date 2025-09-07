@@ -4,7 +4,7 @@ import type { Language } from "../../../i18n/types";
 import "./Header.css";
 
 const Header = () => {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   const languages: { code: Language; label: string; flag: string }[] = [
     { code: "fr", label: "Français", flag: "FR" },
@@ -22,6 +22,15 @@ const Header = () => {
         <Link to="/" className="logo-link">
           <img src="/logo-transparent.png" alt="MyoCare" className="logo" />
         </Link>
+
+        <nav className="nav-links">
+          <Link to="/" className="nav-link">
+            {t.navigation.home}
+          </Link>
+          <Link to="/diagnostic" className="nav-link">
+            {t.navigation.diagnostic}
+          </Link>
+        </nav>
 
         <div className="language-switcher">
           <button className="language-button" aria-label="Change language">

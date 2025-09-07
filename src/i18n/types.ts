@@ -1,8 +1,18 @@
-export type Language = 'fr' | 'en' | 'nl';
+export type Language = "fr" | "en" | "nl";
 
 export interface TranslationKeys {
+  meta: {
+    title: string;
+    description: string;
+    keywords: string;
+    ogTitle: string;
+    ogDescription: string;
+    twitterTitle: string;
+    twitterDescription: string;
+  };
   navigation: {
     home: string;
+    diagnostic: string;
   };
   landing: {
     hero: {
@@ -105,6 +115,182 @@ export interface TranslationKeys {
         experts: string;
         satisfaction: string;
       };
+    };
+  };
+  diagnostic: {
+    title: string;
+    stepIndicator: string;
+    navigation: {
+      previous: string;
+      next: string;
+      submit: string;
+    };
+    sections: {
+      generalInfo: {
+        title: string;
+        age: string;
+        gender: string;
+        genderOptions: {
+          male: string;
+          female: string;
+        };
+        height: string;
+        weight: string;
+        profession: string;
+        activityLevel: string;
+        activityOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+      };
+      painHistory: {
+        title: string;
+        duration: string;
+        durationOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        onset: string;
+        onsetOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        continuity: string;
+        continuityOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        evolution: string;
+        evolutionOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+      };
+      painLocation: {
+        title: string;
+        location: string;
+        locationOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        radiation: string;
+        radiationOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        numbnessTingling: string;
+        numbnessTinglingOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        numbnessDetails: string;
+        numbnessDetailsPlaceholder: string;
+      };
+      painCharacteristics: {
+        title: string;
+        intensity: string;
+        intensityScale: {
+          none: string;
+          extreme: string;
+        };
+        type: string;
+        typeOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        moments: string;
+        momentsOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+      };
+      painFactors: {
+        title: string;
+        aggravating: string;
+        aggravatingOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        aggravatingOther: string;
+        aggravatingOtherPlaceholder: string;
+        relieving: string;
+        relievingOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        relievingOther: string;
+        relievingOtherPlaceholder: string;
+      };
+      medicalHistory: {
+        title: string;
+        previousInjuries: string;
+        previousInjuriesOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        previousInjuriesDetails: string;
+        previousInjuriesDetailsPlaceholder: string;
+        previousExams: string;
+        previousExamsOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        previousExamsDetails: string;
+        previousExamsDetailsPlaceholder: string;
+        generalHistory: string;
+        generalHistoryPlaceholder: string;
+      };
+      lifestyle: {
+        title: string;
+        workPosition: string;
+        workPositionOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        sleepQuality: string;
+        sleepQualityOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        stressLevel: string;
+        stressLevelOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        currentExercises: string;
+        currentExercisesOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        currentExercisesDetails: string;
+        currentExercisesDetailsPlaceholder: string;
+      };
+      goals: {
+        title: string;
+        primary: string;
+        primaryOptions: Array<{
+          value: string;
+          label: string;
+        }>;
+        primaryOther: string;
+        primaryOtherPlaceholder: string;
+      };
+    };
+    redFlags: {
+      title: string;
+      description: string;
+      warning: string;
+      contactDoctor: string;
+      advice: string;
+      noRedFlags: string;
+      options: Array<{
+        value: string;
+        label: string;
+      }>;
+    };
+    summary: {
+      title: string;
+      description: string;
     };
   };
   footer: {
